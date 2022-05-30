@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import List from './redux/component/List';
+import Edit from './redux/component/Edit';
+import Add from './redux/component/Add';
+import {
+  Routes,
+  Route,
+} from 'react-router-dom';
+// import { useSelector } from 'react-redux'
 function App() {
+
+  // const userList = useSelector(state => state.userList)
+
+  // const { loading, error, user } = userList
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <Routes>
+        <Route  path='/' element={< List />} />
+        <Route  path='/edit' element={< Edit />} />
+        <Route  path='/add' element={< Add />} />
+        <Route  path='/back' element={< List />} />
+      </Routes>
+
+      {/* <List/> */}
     </div>
   );
 }
