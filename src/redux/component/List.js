@@ -14,11 +14,9 @@ const List = () => {
 
   const { loading, error, user } = userList
 
-  { console.log({ user }) }
-
   useEffect(() => {
     dispatch(userAction())
-  },[])
+  },[dispatch])
 
   return (
     <>
